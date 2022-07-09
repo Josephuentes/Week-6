@@ -14,15 +14,16 @@ const CARD_VALUE_MAP = {
     'A' : 14,
 }
 
-var playeronetally = 0
-var playertwotally = 0
+var playerAtally = 0
+var playerBtally = 0
+var tie = 'tie'
 
 function createDeck(){
     var suits = ['H', 'C', 'D', 'S']
     var ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
     var deck = []; 
     
-    for(suitCounter = 0; suitCounter < 4; suitCounter++){
+    for(var suitCounter = 0; suitCounter < 4; suitCounter++){
         for(var rankCounter = 0; rankCounter < 13; rankCounter++){
             //console.log(ranks[rankCounter] + suits[suitCounter])
             deck.push(ranks[rankCounter] + suits[suitCounter]);
@@ -44,34 +45,33 @@ for (var i = 0; i < 52; i++) {
 var testdeck = createDeck();
 shuffleDeck(testdeck);
 
-var playeronedeck = testdeck.splice(0, 26);
-console.log(playeronedeck)
-var playertwodeck = testdeck.splice(0, 27, 52);
-console.log(playertwodeck)
+var playerhandA = testdeck.splice(0, 26);
+//console.log(playerhandA)
+var playerhandB = testdeck.splice(0, 27, 52);
+//console.log(playerhandB)
 
-let playeronedraw = playeronedeck.shift()
-let playertwodraw = playertwodeck.shift()
+while (typeof (i = playerhandA.shift()) !== 'undefined'){
+    while (typeof (j = playerhandB.shift()) !== 'undefined')
 
+    if (playerhandA > playerhandB) {
+        console.log(playerhandA);
+        console.count(playerAtally += 1);
+        console.log(playerAtally)
+        
+        
+     } else if (playerhandA < playerhandB) {
+        console.log(playerhandB);
+       console.count(playerBtally += 1);
+        console.log(playerBtally);
+         
+     } else if (playerhandA == playerhandB){
+        console.log(tie)
+     }
+     }
 
-
-
-while (typeof (i = playeronedeck.shift()) !== 'undefined'){
-while (typeof (j = playertwodeck.shift()) !== 'undefined')
-    
-
-
-if (playeronedraw > playertwodraw) {
-   //playeronedeck.push(playeronedraw, playertwodraw);
-   console.log(playeronedraw);
-   console.count(playeronetally += 1);
-   console.log(playeronetally)
-   
-   
-} else if (playeronedraw < playertwodraw) {
-    //playertwodeck.push (playeronedraw, playertwodraw)
-   console.log(playertwodraw);
-  console.count(playertwotally += 1);
-   console.log(playertwotally);
-    
-} 
-}
+     if (playerAtally > playerBtally)
+     {
+        alert('player A wins')
+     } else if (playerAtally < playerBtally){
+        alert ('player B wins')
+     }
