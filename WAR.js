@@ -45,32 +45,33 @@ var testdeck = createDeck();
 shuffleDeck(testdeck);
 
 var playeronedeck = testdeck.splice(0, 26);
-//console.log(playeronedeck)
+console.log(playeronedeck)
 var playertwodeck = testdeck.splice(0, 27, 52);
-//console.log(playertwodeck)
+console.log(playertwodeck)
 
-const playeronedraw = playeronedeck.shift()
-const playertwodraw = playertwodeck.shift()
-
-
+let playeronedraw = playeronedeck.shift()
+let playertwodraw = playertwodeck.shift()
 
 
-while (playeronedeck.length < 1){
-    playeronedeck.length --;
-    playertwodeck.length += playeronedeck
-}
+
+
+while (typeof (i = playeronedeck.shift()) !== 'undefined'){
+while (typeof (j = playertwodeck.shift()) !== 'undefined')
+    
+
 
 if (playeronedraw > playertwodraw) {
-   playeronedeck.push(playeronedraw, playertwodraw);
+   //playeronedeck.push(playeronedraw, playertwodraw);
    console.log(playeronedraw);
    console.count(playeronetally += 1);
    console.log(playeronetally)
-   //alert('player one')
+   
    
 } else if (playeronedraw < playertwodraw) {
-    playertwodeck.push (playeronedraw, playertwodraw)
+    //playertwodeck.push (playeronedraw, playertwodraw)
    console.log(playertwodraw);
   console.count(playertwotally += 1);
-   console.log(playertwotally)
+   console.log(playertwotally);
     
 } 
+}
